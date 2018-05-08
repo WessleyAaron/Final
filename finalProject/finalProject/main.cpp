@@ -5,11 +5,11 @@
 using namespace std;
 
 bool yesno = true;
-int userChoice, depositChoice, moneyDeposit, itemDepositNumber, secondUserChoice;
+int userChoice, depositChoice, itemDepositNumber, itemWithdrawalNumber, withdrawalChoice;
 string username, password;
 string usernameAttempt, passwordAttempt;
-string itemDeposit;
-double userBalanceMoney;
+string itemDeposit, itemWithdrawal;
+double userBalanceMoney, moneyDeposit, moneyWithdrawal;
 string userBalanceItems;
 int userBankChoice;
 
@@ -25,7 +25,30 @@ int logoff()
 
 int withdrawal()
 {
+	cout << "What would you like to withdrawal? [1] Money or [2] Items" << endl;
+	cin >> withdrawalChoice;
 
+	if (withdrawalChoice == 1)
+	{
+		cout << "How much money would you like to withdrawal?" << endl;
+		cout << "$" << endl;
+		cin >> moneyWithdrawal;
+
+		userBalanceMoney = userBalanceMoney - moneyWithdrawal;
+	}
+
+	else if (withdrawalChoice == 2)
+	{
+		cout << "Which item would you like to withdrawal?" << endl;
+		cin >> itemWithdrawal;
+
+		cout << "How many would you like to withdrawal?" << endl;
+		cin >> itemWithdrawalNumber;
+	}
+
+	cout << "Thank you for your withdrawal" << endl;
+
+	account();
 
 	return 0;
 }
@@ -40,14 +63,14 @@ int deposit()
 		cout << "How much money would you like to deposit?" << endl;
 		cout << "$" << endl;
 		cin >> moneyDeposit;
+
+		userBalanceMoney = userBalanceMoney + moneyDeposit;
 	}
 
 	else if (depositChoice == 2)
 	{
 		cout << "Which item would you like to deposit?" << endl;
 		cin >> itemDeposit;
-
-		userBalanceMoney = userBalanceMoney + moneyDeposit;
 
 		cout << "How many would you like to deposit?" << endl;
 		cin >> itemDepositNumber;
@@ -161,6 +184,4 @@ int main()
 			main();
 		}
 	}
-
-	system("pause");
 }
