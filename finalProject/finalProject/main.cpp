@@ -28,13 +28,29 @@ int withdrawal()
 	cout << "What would you like to withdrawal? [1] Money or [2] Items" << endl;
 	cin >> withdrawalChoice;
 
-	if (withdrawalChoice == 1)
+	if (userBalanceMoney == 0.00 && withdrawalChoice == 1)
+	{
+		cout << "You don't have any money to take out" << endl;
+
+		account();
+	}
+
+	else if (withdrawalChoice == 1)
 	{
 		cout << "How much money would you like to withdrawal?" << endl;
-		cout << "$" << endl;
+		cout << "$";
 		cin >> moneyWithdrawal;
 
 		userBalanceMoney = userBalanceMoney - moneyWithdrawal;
+
+		if (moneyWithdrawal > userBalanceMoney)
+		{
+			cout << "You don't have that much money to take out" << endl;
+
+			userBalanceMoney = userBalanceMoney + moneyWithdrawal;
+
+			account();
+		}
 	}
 
 	else if (withdrawalChoice == 2)
@@ -61,7 +77,7 @@ int deposit()
 	if (depositChoice == 1)
 	{
 		cout << "How much money would you like to deposit?" << endl;
-		cout << "$" << endl;
+		cout << "$";
 		cin >> moneyDeposit;
 
 		userBalanceMoney = userBalanceMoney + moneyDeposit;
