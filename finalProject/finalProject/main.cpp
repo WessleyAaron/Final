@@ -4,20 +4,30 @@
 #include "totallylegitperfectlylegaldarkalleynotblackmarketatallmarketplace.h"
 using namespace std;
 
-int map()
+int main()
 {
 	int userChoice;
 
-	cout << "Would you like to go to the bank? [1] Yes or [2] No" << endl;
+	cout << "Welcome to Sim City" << endl;
+	cout << "Where would you like to go? [1] Bank, [2] Not Wal-Mart"
+		"[3] Totally legot perfectly legal dark alleynot black market at all market place: ";
 	cin >> userChoice;
 
 	if (userChoice == 1)
 	{
+		
 	}
 
 	else if (userChoice == 2)
 	{
-		system("pause");
-		return 0;
+		
 	}
+
+	else if (userChoice == 3)
+	{
+
+	}
+
+	system("pause");
+	return 0;
 }
