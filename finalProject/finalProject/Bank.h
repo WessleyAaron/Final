@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include "bank.h"
+
 using namespace std;
 
 bool yesno = true;
@@ -21,31 +21,31 @@ int logoff()
 int withdrawal()
 {
 
-		if (userBalanceMoney == 0.00) //when you don't have any money in your account
+	if (userBalanceMoney == 0.00) //when you don't have any money in your account
+	{
+		cout << "You don't have any money to take out\n" << endl;
+	}
+
+	else if (userBalanceMoney > 0.00) //while you have at least 1 penny in your account
+	{
+		cout << "How much money would you like to withdrawal? $";
+		cin >> moneyWithdrawal; //user enters how much money to take out of the account
+
+		cout << "\n";
+
+		if (moneyWithdrawal > userBalanceMoney) //when you try to take out more money than you have
 		{
-			cout << "You don't have any money to take out\n" << endl;
+			cout << "You don't have that much money to take out\n" << endl;
 		}
 
-		else if (userBalanceMoney > 0.00) //while you have at least 1 penny in your account
+		else if (moneyWithdrawal <= userBalanceMoney) //when you try to take out money that is less than or equal too what you have in your account
 		{
-			cout << "How much money would you like to withdrawal? $";
-			cin >> moneyWithdrawal; //user enters how much money to take out of the account
+			userBalanceMoney = userBalanceMoney - moneyWithdrawal; //math that takes money out of the account
 
-			cout << "\n";
-
-			if (moneyWithdrawal > userBalanceMoney) //when you try to take out more money than you have
-			{
-				cout << "You don't have that much money to take out\n" << endl;
-			}
-
-			else if (moneyWithdrawal <= userBalanceMoney) //when you try to take out money that is less than or equal too what you have in your account
-			{
-				userBalanceMoney = userBalanceMoney - moneyWithdrawal; //math that takes money out of the account
-
-				cout << "Thank you for your withdrawal\n" << endl;
-			}
+			cout << "Thank you for your withdrawal\n" << endl;
 		}
-	
+	}
+
 
 	//goes back to the account function
 
