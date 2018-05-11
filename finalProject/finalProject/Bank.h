@@ -10,11 +10,15 @@ string username, password;
 string usernameAttempt, passwordAttempt;
 double userBalanceMoney, moneyDeposit, moneyWithdrawal;
 
+int main();
+
+
 int logoff()
 {
 	cout << "Goodbye\n" << endl;
 
-	system("pause"); //ends the program
+	main(); //takes you back to the main function
+
 	return 0;
 }
 
@@ -149,7 +153,7 @@ int mainbank() //initial starting point
 {
 	int userSignIn, userCreate;
 
-	cout << "Welcome to the bank" << endl;
+	cout << "Welcome to the bank\n" << endl;
 	cout << "Do you have an accout? [1] Yes or [2] No: ";
 	cin >> userChoice;
 
@@ -190,4 +194,6 @@ int mainbank() //initial starting point
 			mainbank();
 		}
 	}
+
+	return 0;
 }
