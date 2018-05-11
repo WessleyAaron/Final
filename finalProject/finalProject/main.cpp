@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
-
+#include "bank.h"
+#include "totallylegitperfectlylegaldarkalleynotblackmarketatallmarketplace.h"
 using namespace std;
 
 int map()
@@ -12,7 +13,6 @@ int map()
 
 	if (userChoice == 1)
 	{
-		
 	}
 
 	else if (userChoice == 2)
