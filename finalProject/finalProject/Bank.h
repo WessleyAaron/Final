@@ -153,7 +153,7 @@ int mainbank() //initial starting point
 {
 	int userSignIn, userCreate;
 
-	cout << "Welcome to the bank\n" << endl;
+	cout << "Welcome to the bank terminal\n" << endl;
 	cout << "Do you have an accout? [1] Yes or [2] No: ";
 	cin >> userChoice;
 
