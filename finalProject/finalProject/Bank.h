@@ -12,7 +12,6 @@ double userBalanceMoney, moneyDeposit, moneyWithdrawal;
 
 int main();
 
-
 int logoff()
 {
 	cout << "Goodbye\n" << endl;

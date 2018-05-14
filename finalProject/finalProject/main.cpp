@@ -29,7 +29,7 @@ int main()
 
 	else if (userChoice == 3)
 	{
-
+		blackmarketMain();
 	}
 
 	else if (userChoice == 4)
