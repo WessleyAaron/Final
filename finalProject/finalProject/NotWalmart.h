@@ -24,7 +24,7 @@ int CheckOut()
 
 	if (totalWalMart > userBalanceMoney)
 	{
-		cout << "I'm sorry, buy you don't have enough money to buy all of this\n" << endl;
+		cout << "I'm sorry, but you don't have enough money to buy all of this\n" << endl;
 
 		cout << "You're going to have to put those items back\n" << endl;
 	}
@@ -42,29 +42,194 @@ int CheckOut()
 int soda()
 {
 	int sodaChoice, sodaRepeat;
+	int container, containerSize;
+	int canNumber, bottleNumber;
+	double can12Price = 10.99;
+	double can24Price = 13.99;
+	double bottle6Price = 11.99;
+	double twoLiterPrice = 14.99;
 
 	do
 	{
-		cout << "What would you like from the soda section? [1] Pepsi, [2] Mountain Dew , [3] Sprite: ";
+		cout << "Which soda would you like? [1] Pepsi, [2] Mountain Dew, [3] Sprite: ";
 		cin >> sodaChoice;
+
+		cout << "\n";
 
 		if (sodaChoice == 1)
 		{
+			cout << "[1] Cans or [2] Bottles?: ";
+			cin >> container;
 
+			cout << "\n";
+
+			if (container == 1)
+			{
+				cout << "[1] 12 pack or [2] 24 pack?: ";
+				cin >> containerSize;
+
+				cout << "\n";
+
+				if (containerSize == 1)
+				{
+					cout << "How many would you like?: ";
+					cin >> canNumber;
+
+					totalSoda += canNumber * can12Price;
+				}
+
+				else if (containerSize == 2)
+				{
+					cout << "How many would you like?: ";
+					cin >> canNumber;
+
+					totalSoda += canNumber * can24Price;
+				}
+			}
+
+			else if (container == 2)
+			{
+				cout << "[1] 6 pack or [2] 2 liter?: ";
+				cin >> containerSize;
+
+				cout << "\n";
+
+				if (containerSize == 1)
+				{
+					cout << "How many would you like?: ";
+					cin >> bottleNumber;
+
+					totalSoda += bottleNumber * bottle6Price;
+				}
+
+				else if (containerSize == 2)
+				{
+					cout << "How many would you like?: ";
+					cin >> bottleNumber;
+
+					totalSoda += bottleNumber * twoLiterPrice;
+				}
+			}
 		}
 
 		else if (sodaChoice == 2)
 		{
+			cout << "[1] Cans or [2] Bottles?: ";
+			cin >> container;
 
+			cout << "\n";
+
+			if (container == 1)
+			{
+				cout << "[1] 12 pack or [2] 24 pack?: ";
+				cin >> containerSize;
+
+				cout << "\n";
+
+				if (containerSize == 1)
+				{
+					cout << "How many would you like?: ";
+					cin >> canNumber;
+
+					totalSoda += canNumber * can12Price;
+				}
+
+				else if (containerSize == 2)
+				{
+					cout << "How many would you like?: ";
+					cin >> canNumber;
+
+					totalSoda += canNumber * can24Price;
+				}
+			}
+
+			else if (container == 2)
+			{
+				cout << "[1] 6 pack or [2] 2 liter?: ";
+				cin >> containerSize;
+
+				cout << "\n";
+
+				if (containerSize == 1)
+				{
+					cout << "How many would you like?: ";
+					cin >> bottleNumber;
+
+					totalSoda += bottleNumber * bottle6Price;
+				}
+
+				else if (containerSize == 2)
+				{
+					cout << "How many would you like?: ";
+					cin >> bottleNumber;
+
+					totalSoda += bottleNumber * twoLiterPrice;
+				}
+			}
 		}
 
 		else if (sodaChoice == 3)
 		{
+			cout << "[1] Cans or [2] Bottles?: ";
+			cin >> container;
 
+			cout << "\n";
+
+			if (container == 1)
+			{
+				cout << "[1] 12 pack or [2] 24 pack?: ";
+				cin >> containerSize;
+
+				cout << "\n";
+
+				if (containerSize == 1)
+				{
+					cout << "How many would you like?: ";
+					cin >> canNumber;
+
+					totalSoda += canNumber * can12Price;
+				}
+
+				else if (containerSize == 2)
+				{
+					cout << "How many would you like?: ";
+					cin >> canNumber;
+
+					totalSoda += canNumber * can24Price;
+				}
+			}
+
+			else if (container == 2)
+			{
+				cout << "[1] 6 pack or [2] 2 liter?: ";
+				cin >> containerSize;
+
+				cout << "\n";
+
+				if (containerSize == 1)
+				{
+					cout << "How many would you like?: ";
+					cin >> bottleNumber;
+
+					totalSoda += bottleNumber * bottle6Price;
+				}
+
+				else if (containerSize == 2)
+				{
+					cout << "How many would you like?: ";
+					cin >> bottleNumber;
+
+					totalSoda += bottleNumber * twoLiterPrice;
+				}
+			}
 		}
 
-		cout << "Would you like to buy anything else from frozen? [1] Yes or [2] No: ";
+		cout << "\n";
+
+		cout << "Would you like to buy anything else from soda? [1] Yes or [2] No: ";
 		cin >> sodaRepeat;
+
+		cout << "\n";
 	}
 
 	while (sodaRepeat == 1);
@@ -152,7 +317,7 @@ int frozen()
 
 		else if (frozenChoice == 3)
 		{
-			cout << "What kind of ice cream? [1] vanilla, [2] chocolate, [3] cookies n' creme: ";
+			cout << "What kind of ice cream? [1] vanilla, [2] chocolate, [3] cookies n' cream: ";
 			cin >> iceCreamChoice;
 
 			cout << "\n";
@@ -175,7 +340,7 @@ int frozen()
 
 			else if (iceCreamChoice == 3)
 			{
-				cout << "How many tubs of cookies n' creme ice cream would you like?: ";
+				cout << "How many tubs of cookies n' cream ice cream would you like?: ";
 				cin >> tubNumber;
 
 				totalFrozen += tubNumber * CNCPrice;
