@@ -12,8 +12,7 @@ double userBalanceMoney, moneyDeposit, moneyWithdrawal;
 
 int main();
 
-
-int logoff()
+int logoff() //when you leave the bank terminal
 {
 	cout << "Goodbye\n" << endl;
 
@@ -22,7 +21,7 @@ int logoff()
 	return 0;
 }
 
-int withdrawal()
+int withdrawal() //where you take money out of your account
 {
 
 	if (userBalanceMoney == 0.00) //when you don't have any money in your account
@@ -56,7 +55,7 @@ int withdrawal()
 	return 0;
 }
 
-int deposit()
+int deposit() //where you deposit your money
 {
 	cout << "How much money would you like to deposit? $";
 	cin >> moneyDeposit; //user enters how much money to deposit
@@ -72,10 +71,11 @@ int deposit()
 	return 0;
 }
 
-int account()
+int account() //where you choose what you want to do (take in/take out money) or leave
 {
 	cout << fixed << showpoint;
 	cout << setprecision(2); //makes it so each money display shows 2 decimal points
+
 	do{
 		cout << "Your current balance is $" << userBalanceMoney << "\n" << endl; //shows your current balance
 		cout << "What would you like to do? [1] Deposit, [2] Withdrawal, [3] Log Off: "; //user chooses what to do
@@ -83,18 +83,18 @@ int account()
 
 		cout << "\n";
 
-		if (userBankChoice == 1)
+		switch (userBankChoice)
 		{
+		case 1:
 			deposit(); //takes you to the deposit function
-		}
-
-		else if (userBankChoice == 2)
-		{
+			break;
+		case 2:
 			withdrawal(); //takes you to the withdrawal function
+			break;
 		}
-
-
-	} while (userBankChoice != 3);
+	}
+	
+	while (userBankChoice != 3);
 
 	logoff(); //takes you to the log off function
 
@@ -154,7 +154,7 @@ int mainbank() //initial starting point
 	int userSignIn, userCreate;
 
 	cout << "Welcome to the bank terminal\n" << endl;
-	cout << "Do you have an accout? [1] Yes or [2] No: ";
+	cout << "Do you have an account? [1] Yes or [2] No: ";
 	cin >> userChoice;
 
 	cout << "\n";
@@ -166,14 +166,14 @@ int mainbank() //initial starting point
 
 		cout << "\n";
 
-		if (userSignIn == 1) //takes you to the sign in function
+		switch (userSignIn)
 		{
-			signIn();
-		}
-
-		else if (userSignIn == 2) //replays the main function
-		{
-			mainbank();
+		case 1:
+			signIn(); //takes you to the sign in function
+			break;
+		case 2:
+			mainbank(); //replays the main function
+			break;
 		}
 	}
 
@@ -184,14 +184,14 @@ int mainbank() //initial starting point
 
 		cout << "\n";
 
-		if (userCreate == 1) //takes you to the account create function
+		switch (userCreate)
 		{
-			accountCreate();
-		}
-
-		else if (userCreate == 2) //replays the main function
-		{
-			mainbank();
+		case 1:
+			accountCreate(); //takes you to the account create function
+			break;
+		case 2:
+			mainbank(); //replays the main function
+			break;
 		}
 	}
 
