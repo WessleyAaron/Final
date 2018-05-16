@@ -13,27 +13,27 @@ int CheckOut()
 	double totalWalMart;
 
 	cout << fixed << showpoint;
-	cout << setprecision(2);
+	cout << setprecision(2); //makes it so each money display shows 2 decimal points
 
-	totalWalMart = totalMeat + totalSoda + totalFrozen;
+	totalWalMart = totalMeat + totalSoda + totalFrozen; //totals from the deli, frozen, and soda functions are all added here
 
-	cout << "That will cost you $" << totalWalMart << endl;
+	cout << "That will cost you $" << totalWalMart << endl; //shows your total from all the parts of the store
 
 	cout << "\n";
 
-	if (totalWalMart > userBalanceMoney)
+	if (totalWalMart > userBalanceMoney) //shows when you dont have enough money in your bank account to buy everything
 	{
 		cout << "I'm sorry, but you don't have enough money to buy all of this\n" << endl;
 
 		cout << "You're going to have to put those items back\n" << endl;
 	}
 
-	else if (totalWalMart <= userBalanceMoney)
+	else if (totalWalMart <= userBalanceMoney) //takes the money out of your bank account if you have enough
 	{
 		userBalanceMoney = userBalanceMoney - totalWalMart;
 	}
 
-	main();
+	main(); //takes you back to the main function
 
 	return 0;
 }
@@ -51,62 +51,62 @@ int soda()
 	do
 	{
 		cout << "Which soda would you like? [1] Pepsi, [2] Mountain Dew, [3] Sprite: ";
-		cin >> sodaChoice;
+		cin >> sodaChoice; //user chooses which soda they'd like
 
 		cout << "\n";
 
 		if (sodaChoice == 1)
 		{
 			cout << "[1] Cans or [2] Bottles?: ";
-			cin >> container;
+			cin >> container; //user chooses between cans or bottles
 
 			cout << "\n";
 
 			if (container == 1)
 			{
 				cout << "[1] 12 pack or [2] 24 pack?: ";
-				cin >> containerSize;
+				cin >> containerSize; //user chooses between 12 packs and 24 packs
 
 				cout << "\n";
 
 				if (containerSize == 1)
 				{
 					cout << "How many would you like?: ";
-					cin >> canNumber;
+					cin >> canNumber; //user chooses how many packs of cans they'd like
 
-					totalSoda += canNumber * can12Price;
+					totalSoda += canNumber * can12Price; //prices are determined and they are added to your total for this function
 				}
 
 				else if (containerSize == 2)
 				{
 					cout << "How many would you like?: ";
-					cin >> canNumber;
+					cin >> canNumber; //user chooses how many packs of cans they'd like
 
-					totalSoda += canNumber * can24Price;
+					totalSoda += canNumber * can24Price; //prices are determined and they are added to your total for this function
 				}
 			}
 
 			else if (container == 2)
 			{
 				cout << "[1] 6 pack or [2] 2 liter?: ";
-				cin >> containerSize;
+				cin >> containerSize; //user chooses between a 6 pack of bottles or a 2 liter
 
 				cout << "\n";
 
 				if (containerSize == 1)
 				{
 					cout << "How many would you like?: ";
-					cin >> bottleNumber;
+					cin >> bottleNumber; //user chooses how many bottles they'd like
 
-					totalSoda += bottleNumber * bottle6Price;
+					totalSoda += bottleNumber * bottle6Price; //prices are determined and they are added to your total for this function
 				}
 
 				else if (containerSize == 2)
 				{
 					cout << "How many would you like?: ";
-					cin >> bottleNumber;
+					cin >> bottleNumber; //user chooses how many bottles they'd like
 
-					totalSoda += bottleNumber * twoLiterPrice;
+					totalSoda += bottleNumber * twoLiterPrice; //prices are determined and they are added to your total for this function
 				}
 			}
 		}
@@ -114,55 +114,55 @@ int soda()
 		else if (sodaChoice == 2)
 		{
 			cout << "[1] Cans or [2] Bottles?: ";
-			cin >> container;
+			cin >> container; //user chooses between cans or bottles
 
 			cout << "\n";
 
 			if (container == 1)
 			{
 				cout << "[1] 12 pack or [2] 24 pack?: ";
-				cin >> containerSize;
+				cin >> containerSize; //user chooses between 12 packs and 24 packs
 
 				cout << "\n";
 
 				if (containerSize == 1)
 				{
 					cout << "How many would you like?: ";
-					cin >> canNumber;
+					cin >> canNumber; //user chooses how many packs of cans they'd like
 
-					totalSoda += canNumber * can12Price;
+					totalSoda += canNumber * can12Price; //prices are determined and they are added to your total for this function
 				}
 
 				else if (containerSize == 2)
 				{
 					cout << "How many would you like?: ";
-					cin >> canNumber;
+					cin >> canNumber; //user chooses how many packs of cans they'd like
 
-					totalSoda += canNumber * can24Price;
+					totalSoda += canNumber * can24Price; //prices are determined and they are added to your total for this function
 				}
 			}
 
 			else if (container == 2)
 			{
 				cout << "[1] 6 pack or [2] 2 liter?: ";
-				cin >> containerSize;
+				cin >> containerSize; //user chooses between a 6 pack of bottles or a 2 liter
 
 				cout << "\n";
 
 				if (containerSize == 1)
 				{
 					cout << "How many would you like?: ";
-					cin >> bottleNumber;
+					cin >> bottleNumber; //user chooses how many bottles they'd like
 
-					totalSoda += bottleNumber * bottle6Price;
+					totalSoda += bottleNumber * bottle6Price; //prices are determined and they are added to your total for this function
 				}
 
 				else if (containerSize == 2)
 				{
 					cout << "How many would you like?: ";
-					cin >> bottleNumber;
+					cin >> bottleNumber; //user chooses how many bottles they'd like
 
-					totalSoda += bottleNumber * twoLiterPrice;
+					totalSoda += bottleNumber * twoLiterPrice; //prices are determined and they are added to your total for this function
 				}
 			}
 		}
@@ -170,55 +170,55 @@ int soda()
 		else if (sodaChoice == 3)
 		{
 			cout << "[1] Cans or [2] Bottles?: ";
-			cin >> container;
+			cin >> container; //user chooses between cans or bottles
 
 			cout << "\n";
 
 			if (container == 1)
 			{
 				cout << "[1] 12 pack or [2] 24 pack?: ";
-				cin >> containerSize;
+				cin >> containerSize; //user chooses between 12 packs and 24 packs
 
 				cout << "\n";
 
 				if (containerSize == 1)
 				{
 					cout << "How many would you like?: ";
-					cin >> canNumber;
+					cin >> canNumber; //user chooses how many packs of cans they'd like
 
-					totalSoda += canNumber * can12Price;
+					totalSoda += canNumber * can12Price; //prices are determined and they are added to your total for this function
 				}
 
 				else if (containerSize == 2)
 				{
 					cout << "How many would you like?: ";
-					cin >> canNumber;
+					cin >> canNumber; //user chooses how many packs of cans they'd like
 
-					totalSoda += canNumber * can24Price;
+					totalSoda += canNumber * can24Price; //prices are determined and they are added to your total for this function
 				}
 			}
 
 			else if (container == 2)
 			{
 				cout << "[1] 6 pack or [2] 2 liter?: ";
-				cin >> containerSize;
+				cin >> containerSize; //user chooses between a 6 pack of bottles or a 2 liter
 
 				cout << "\n";
 
 				if (containerSize == 1)
 				{
 					cout << "How many would you like?: ";
-					cin >> bottleNumber;
+					cin >> bottleNumber; //user chooses how many bottles they'd like
 
-					totalSoda += bottleNumber * bottle6Price;
+					totalSoda += bottleNumber * bottle6Price; //prices are determined and they are added to your total for this function
 				}
 
 				else if (containerSize == 2)
 				{
 					cout << "How many would you like?: ";
-					cin >> bottleNumber;
+					cin >> bottleNumber; //user chooses how many bottles they'd like
 
-					totalSoda += bottleNumber * twoLiterPrice;
+					totalSoda += bottleNumber * twoLiterPrice; //prices are determined and they are added to your total for this function
 				}
 			}
 		}
@@ -226,7 +226,7 @@ int soda()
 		cout << "\n";
 
 		cout << "Would you like to buy anything else from soda? [1] Yes or [2] No: ";
-		cin >> sodaRepeat;
+		cin >> sodaRepeat; //user chooses if they want more soda or not (takes them back to the storefront if they're done)
 
 		cout << "\n";
 	}
@@ -359,7 +359,7 @@ int frozen()
 	return 0;
 }
 
-int deli()
+int deli() //where you buy your meat
 {
 	int deliRepeat, meatChoice;
 	double meatAmount;
@@ -370,42 +370,42 @@ int deli()
 	do
 	{
 		cout << "What would you like from the Deli? [1] Ham, [2] Salami, [3] Turkey: ";
-		cin >> meatChoice;
+		cin >> meatChoice; //user chooses what kind of meat they want
 
 		cout << "\n";
 
 		if (meatChoice == 1)
 		{
 			cout << "How many pounds of ham would you like? ";
-			cin >> meatAmount;
+			cin >> meatAmount; //user enters how many pounds of meat they'd like
 
 			cout << "\n";
 
-			totalMeat += hamPerPound * meatAmount;
+			totalMeat += hamPerPound * meatAmount; //prices are determined and they are added to your total for this function
 		}
 
 		else if (meatChoice == 2)
 		{
 			cout << "How many pounds of salami would you like? ";
-			cin >> meatAmount;
+			cin >> meatAmount; //user enters how many pounds of meat they'd like
 
 			cout << "\n";
 
-			totalMeat += salamiPerPound * meatAmount;
+			totalMeat += salamiPerPound * meatAmount; //prices are determined and they are added to your total for this function
 		}
 
 		else if (meatChoice == 3)
 		{
 			cout << "How many pounds of turkey would you like? ";
-			cin >> meatAmount;
+			cin >> meatAmount; //user enters how many pounds of meat they'd like
 
 			cout << "\n";
 
-			totalMeat += turkeyPerPound * meatAmount;
+			totalMeat += turkeyPerPound * meatAmount; //prices are determined and they are added to your total for this function
 		}
 
 		cout << "Would you like to buy anything else from deli? [1] Yes or [2] No: ";
-		cin >> deliRepeat;
+		cin >> deliRepeat; //user chooses if they want more meat or not (takes them back to the storefront if they're done)
 
 		cout << "\n";
 	}
@@ -415,7 +415,7 @@ int deli()
 	return 0;
 }
 
-int storeFront()
+int storeFront() //first thing that shows when you enter the store
 {
 	int userChoice;
 
@@ -424,28 +424,24 @@ int storeFront()
 		cout << "Welcome to generic grocery store\n" << endl;
 		cout << "Where would you like to go?" << endl;
 		cout << "\n[1] Deli, [2] Frozen aisles, [3] Soda aisle, [4] Check Out: ";
-		cin >> userChoice;
+		cin >> userChoice; //user chooses where they want to go
 
 		cout << "\n";
 
-		if (userChoice == 1)
+		switch (userChoice)
 		{
-			deli();
-		}
-
-		else if (userChoice == 2)
-		{
-			frozen();
-		}
-
-		else if (userChoice == 3)
-		{
-			soda();
-		}
-
-		else if (userChoice == 4)
-		{
-			CheckOut();
+		case 1:
+			deli(); //runs the deli function
+			break;
+		case 2:
+			frozen(); //runs the forzen function
+			break;
+		case 3:
+			soda(); //runs the soda function
+			break;
+		case 4:
+			CheckOut(); //runs the check out function
+			break;
 		}
 	}
 
