@@ -28,14 +28,12 @@ int main() //the main function of the program
 	case 3:
 		blackmarketMain(); //takes the user to the blackmarketMain function
 		break;
-	}
-
-	if (userChoice == 4) //shows when the user wants to go home
-	{
-		cout << "Home just in time to be bitched at by the Missus because we forgot something" << endl;
-
-		cout << "\n";
+	case 4:
+		cout << "Home just in time to be bitched at by the Missus because we forgot something\n" << endl;
 		system("pause");
 		exit(0); //ends the program
-	} 
+	default:
+		main();
+		break;
+	}
 }

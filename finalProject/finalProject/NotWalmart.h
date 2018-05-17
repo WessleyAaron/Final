@@ -50,6 +50,8 @@ int soda() //where you choose what kind of soda you'd like
 
 	do
 	{
+		system("cls");
+
 		cout << "Which soda would you like? [1] Pepsi, [2] Mountain Dew, [3] Sprite: ";
 		cin >> sodaChoice; //user chooses which soda they'd like
 
@@ -253,6 +255,8 @@ int frozen() //where you choose what frozen items you'd like
 
 	do
 	{
+		system("cls");
+
 		cout << "What would you like from frozen? [1] Fries, [2] Pizza, [3] Ice Cream: ";
 		cin >> frozenChoice; //user chooses what they want from frozen
 
@@ -369,6 +373,8 @@ int deli() //where you buy your meat
 
 	do
 	{
+		system("cls");
+
 		cout << "What would you like from the Deli? [1] Ham, [2] Salami, [3] Turkey: ";
 		cin >> meatChoice; //user chooses what kind of meat they want
 
@@ -421,6 +427,8 @@ int storeFront() //first thing that shows when you enter the store
 
 	do
 	{
+		system("cls");
+
 		cout << "Welcome to generic grocery store\n" << endl;
 		cout << "Where would you like to go?" << endl;
 		cout << "\n[1] Deli, [2] Frozen aisles, [3] Soda aisle, [4] Check Out: ";

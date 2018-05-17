@@ -23,7 +23,6 @@ int logoff() //when you leave the bank terminal
 
 int withdrawal() //where you take money out of your account
 {
-
 	if (userBalanceMoney == 0.00) //when you don't have any money in your account
 	{
 		cout << "You don't have any money to take out\n" << endl;
@@ -48,7 +47,6 @@ int withdrawal() //where you take money out of your account
 			cout << "Thank you for your withdrawal\n" << endl;
 		}
 	}
-
 
 	//goes back to the account function
 
@@ -130,6 +128,8 @@ int signIn() //where you sign in
 
 int accountCreate() //where you create your account
 {
+	system("cls");
+
 	cout << "Please create a username: ";
 	cin >> username; //saves your username
 
@@ -151,6 +151,8 @@ int accountCreate() //where you create your account
 
 int mainbank() //initial starting point
 {
+	system("cls");
+
 	int userSignIn, userCreate;
 
 	cout << "Welcome to the bank terminal\n" << endl;
