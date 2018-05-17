@@ -20,13 +20,13 @@ int main() //the main function of the program
 	switch (userChoice)
 	{
 	case 1:
-		mainbank(); //takes the user to the Bank.h header file
+		mainbank(); //takes the user to the mainbank function
 		break;
 	case 2:
-		storeFront(); //takes the user to the NotWalmart.h header file
+		storeFront(); //takes the user to the storeFront function
 		break;
 	case 3:
-		blackmarketMain(); //takes the user to the totallylegitperfectlylegaldarkalleynotblackmarketatallmarketplace.h header file
+		blackmarketMain(); //takes the user to the blackmarketMain function
 		break;
 	}
 
