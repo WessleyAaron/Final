@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include "color.h"
 
 using namespace std;
 
@@ -23,8 +24,12 @@ int logoff() //when you leave the bank terminal
 
 int withdrawal() //where you take money out of your account
 {
+	system("cls");
+
 	if (userBalanceMoney == 0.00) //when you don't have any money in your account
 	{
+		color(12);
+
 		cout << "You don't have any money to take out\n" << endl;
 	}
 
@@ -37,12 +42,16 @@ int withdrawal() //where you take money out of your account
 
 		if (moneyWithdrawal > userBalanceMoney) //when you try to take out more money than you have
 		{
+			color(12);
+
 			cout << "You don't have that much money to take out\n" << endl;
 		}
 
 		else if (moneyWithdrawal <= userBalanceMoney) //when you try to take out money that is less than or equal too what you have in your account
 		{
 			userBalanceMoney = userBalanceMoney - moneyWithdrawal; //math that takes money out of the account
+
+			color(10);
 
 			cout << "Thank you for your withdrawal\n" << endl;
 		}
@@ -55,12 +64,16 @@ int withdrawal() //where you take money out of your account
 
 int deposit() //where you deposit your money
 {
+	system("cls");
+
 	cout << "How much money would you like to deposit? $";
 	cin >> moneyDeposit; //user enters how much money to deposit
 
 	cout << "\n";
 
 	userBalanceMoney = userBalanceMoney + moneyDeposit; //math that adds deposit to what is already in the account
+
+	color(10);
 
 	cout << "Thank you for your deposit\n" << endl;
 
@@ -75,6 +88,8 @@ int account() //where you choose what you want to do (take in/take out money) or
 	cout << setprecision(2); //makes it so each money display shows 2 decimal points
 
 	do{
+		color(14);
+
 		cout << "Your current balance is $" << userBalanceMoney << "\n" << endl; //shows your current balance
 		cout << "What would you like to do? [1] Deposit, [2] Withdrawal, [3] Log Off: "; //user chooses what to do
 		cin >> userBankChoice;
@@ -154,6 +169,8 @@ int mainbank() //initial starting point
 	system("cls");
 
 	int userSignIn, userCreate;
+
+	color(14);
 
 	cout << "Welcome to the bank terminal\n" << endl;
 	cout << "Do you have an account? [1] Yes or [2] No: ";

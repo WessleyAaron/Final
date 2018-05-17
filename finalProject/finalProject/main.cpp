@@ -10,6 +10,8 @@ int main() //the main function of the program
 {
 	int userChoice;
 
+	color(7);
+
 	cout << "Welcome to Sim City\n" << endl; // first thing you see when you run the program
 	cout << "Where would you like to go?" << endl;
 	cout << "\n[1] Bank, [2] Not Wal-Mart, [3] Back alley shop, [4] Home: ";
