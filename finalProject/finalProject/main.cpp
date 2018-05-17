@@ -10,6 +10,8 @@ int main() //the main function of the program
 {
 	int userChoice;
 
+	color(7);
+
 	cout << "Welcome to Sim City\n" << endl; // first thing you see when you run the program
 	cout << "Where would you like to go?" << endl;
 	cout << "\n[1] Bank, [2] Not Wal-Mart, [3] Back alley shop, [4] Home: ";
@@ -28,14 +30,12 @@ int main() //the main function of the program
 	case 3:
 		blackmarketMain(); //takes the user to the blackmarketMain function
 		break;
-	}
-
-	if (userChoice == 4) //shows when the user wants to go home
-	{
-		cout << "Home just in time to be bitched at by the Missus because we forgot something" << endl;
-
-		cout << "\n";
+	case 4:
+		cout << "Home just in time to be bitched at by the Missus because we forgot something\n" << endl;
 		system("pause");
 		exit(0); //ends the program
-	} 
+	default:
+		main();
+		break;
+	}
 }
