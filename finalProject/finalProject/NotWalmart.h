@@ -39,6 +39,10 @@ int CheckOut() //where you buy the items you chose
 		cout << "Thanks for shopping\n" << endl;
 	}
 
+	totalFrozen = 0.00; //resets the total money spent to $0.00
+	totalSoda = 0.00;
+	totalMeat = 0.00;
+
 	main(); //takes you back to the main function
 
 	return 0;
