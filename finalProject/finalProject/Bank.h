@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <fstream>
 #include "color.h"
-
 using namespace std;
 
 bool yesno = true;
