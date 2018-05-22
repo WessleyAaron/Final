@@ -4,6 +4,7 @@
 #include "NotWalmart.h"
 #include "totallylegitperfectlylegaldarkalleynotblackmarketatallmarketplace.h"
 #include <cstdlib>
+#include <fstream>
 using namespace std;
 
 int main() //the main function of the program
