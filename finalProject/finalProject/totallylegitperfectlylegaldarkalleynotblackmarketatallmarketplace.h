@@ -12,6 +12,8 @@ int blackmarketitems(){
 		int itemsstock = rand() % 20;
 		cout << blackitems[itemsstock] << " : " << blackprices[itemsstock] << endl;
 	}
+	system ("pause");
+	return 0;
 }
 int blackmarketMain(){
 	string yesno;
