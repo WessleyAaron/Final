@@ -11,7 +11,7 @@ int main() //the main function of the program
 {
 	int userChoice;
 
-	color(7);
+	color(7); //makes the text color white
 
 	cout << "Welcome to Sim City\n" << endl; // first thing you see when you run the program
 	cout << "Where would you like to go?" << endl;

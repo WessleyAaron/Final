@@ -24,7 +24,7 @@ int CheckOut() //where you buy the items you chose
 
 	if (totalWalMart > userBalanceMoney) //shows when you dont have enough money in your bank account to buy everything
 	{
-		color(12);
+		color(12); //makes the text color red
 
 		cout << "I'm sorry, but you don't have enough money to buy all of this\n" << endl;
 
@@ -35,7 +35,7 @@ int CheckOut() //where you buy the items you chose
 	{
 		userBalanceMoney = userBalanceMoney - totalWalMart;
 
-		color(10);
+		color(10); //makes the text color green
 
 		cout << "Thanks for shopping\n" << endl;
 	}
@@ -63,7 +63,7 @@ int soda() //where you choose what kind of soda you'd like
 	{
 		system("cls");
 
-		color(13);
+		color(13); //makes the text color purple
 
 		cout << "Which soda would you like? [1] Pepsi, [2] Mountain Dew, [3] Sprite: ";
 		cin >> sodaChoice; //user chooses which soda they'd like
@@ -270,7 +270,7 @@ int frozen() //where you choose what frozen items you'd like
 	{
 		system("cls");
 
-		color(6);
+		color(6); //makes the text color bronze
 
 		cout << "What would you like from frozen? [1] Fries, [2] Pizza, [3] Ice Cream: ";
 		cin >> frozenChoice; //user chooses what they want from frozen
@@ -388,7 +388,7 @@ int deli() //where you buy your meat
 
 	do
 	{
-		color(8);
+		color(8); //makes the text color gray
 
 		system("cls");
 
@@ -446,7 +446,7 @@ int storeFront() //first thing that shows when you enter the store
 	{
 		system("cls");
 		
-		color(3);
+		color(3); //makes the text color blue
 
 		cout << "Welcome to generic grocery store\n" << endl;
 		cout << "Where would you like to go?" << endl;
