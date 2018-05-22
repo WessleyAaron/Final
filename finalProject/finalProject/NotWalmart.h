@@ -9,7 +9,7 @@ double totalMeat = 0.00;
 double totalSoda = 0.00;
 double totalFrozen = 0.00;
 
-int CheckOut()
+int CheckOut() //where you buy the items you chose
 {
 	double totalWalMart;
 
@@ -24,6 +24,8 @@ int CheckOut()
 
 	if (totalWalMart > userBalanceMoney) //shows when you dont have enough money in your bank account to buy everything
 	{
+		color(12);
+
 		cout << "I'm sorry, but you don't have enough money to buy all of this\n" << endl;
 
 		cout << "You're going to have to put those items back\n" << endl;
@@ -32,14 +34,22 @@ int CheckOut()
 	else if (totalWalMart <= userBalanceMoney) //takes the money out of your bank account if you have enough
 	{
 		userBalanceMoney = userBalanceMoney - totalWalMart;
+
+		color(10);
+
+		cout << "Thanks for shopping\n" << endl;
 	}
+
+	totalFrozen = 0.00; //resets the total money spent to $0.00
+	totalSoda = 0.00;
+	totalMeat = 0.00;
 
 	main(); //takes you back to the main function
 
 	return 0;
 }
 
-int soda()
+int soda() //where you choose what kind of soda you'd like
 {
 	int sodaChoice, sodaRepeat;
 	int container, containerSize;
@@ -51,6 +61,10 @@ int soda()
 
 	do
 	{
+		system("cls");
+
+		color(13);
+
 		cout << "Which soda would you like? [1] Pepsi, [2] Mountain Dew, [3] Sprite: ";
 		cin >> sodaChoice; //user chooses which soda they'd like
 
@@ -237,7 +251,7 @@ int soda()
 	return 0;
 }
 
-int frozen()
+int frozen() //where you choose what frozen items you'd like
 {
 	int frozenChoice, frozenRepeat;
 	int friesChoice, bagNumber;
@@ -254,103 +268,107 @@ int frozen()
 
 	do
 	{
+		system("cls");
+
+		color(6);
+
 		cout << "What would you like from frozen? [1] Fries, [2] Pizza, [3] Ice Cream: ";
-		cin >> frozenChoice;
+		cin >> frozenChoice; //user chooses what they want from frozen
 
 		cout << "\n";
 
 		if (frozenChoice == 1)
 		{
 			cout << "What kind of fries? [1] steak fries or [2] curly fries: ";
-			cin >> friesChoice;
+			cin >> friesChoice; //user chooses between steak fries and curly fries
 
 			cout << "\n";
 
 			if (friesChoice == 1)
 			{
 				cout << "How many bags of steak fries?: ";
-				cin >> bagNumber;
+				cin >> bagNumber; //user chooses how many bags of fries they'd like
 
-				totalFrozen += bagNumber * steakFriesPrice;
+				totalFrozen += bagNumber * steakFriesPrice; //prices are determined and they are added to your total for this function
 			}
 
 			else if (friesChoice == 2)
 			{
 				cout << "How many bags of curly fries?: ";
-				cin >> bagNumber;
+				cin >> bagNumber; //user chooses how many bags of fries they'd like
 
-				totalFrozen += bagNumber * curlyFriesPrice;
+				totalFrozen += bagNumber * curlyFriesPrice; //prices are determined and they are added to your total for this function
 			}
 		}
 
 		else if (frozenChoice == 2)
 		{
 			cout << "What kind of pizza would you like? [1] cheese, [2] pepperoni, [3] sausage: ";
-			cin >> pizzaChoice;
+			cin >> pizzaChoice; //user chooses what kind of pizza they'd like
 
 			cout << "\n";
 
 			if (pizzaChoice == 1)
 			{
 				cout << "How many cheese pizzas would you like?: ";
-				cin >> pizzaNumber;
+				cin >> pizzaNumber; //user chooses how many pizzas they'd like
 
-				totalFrozen += pizzaNumber * cheesePizzaPrice;
+				totalFrozen += pizzaNumber * cheesePizzaPrice; //prices are determined and they are added to your total for this function
 			}
 
 			else if (pizzaChoice == 2)
 			{
 				cout << "How many pepperoni pizzas would you like?: ";
-				cin >> pizzaNumber;
+				cin >> pizzaNumber; //user chooses how many pizzas they'd like
 
-				totalFrozen += pizzaNumber * pepperoniPizzaPrice;
+				totalFrozen += pizzaNumber * pepperoniPizzaPrice; //prices are determined and they are added to your total for this function
 			}
 
 			else if (pizzaChoice == 3)
 			{
 				cout << "How many sausage pizzas would you like?: ";
-				cin >> pizzaNumber;
+				cin >> pizzaNumber; //user chooses how many pizzas they'd like
 
-				totalFrozen += pizzaNumber * sausagePizzaPrice;
+				totalFrozen += pizzaNumber * sausagePizzaPrice; //prices are determined and they are added to your total for this function
 			}
 		}
 
 		else if (frozenChoice == 3)
 		{
 			cout << "What kind of ice cream? [1] vanilla, [2] chocolate, [3] cookies n' cream: ";
-			cin >> iceCreamChoice;
+			cin >> iceCreamChoice; //user chooses what kind of ice cream they'd like
 
 			cout << "\n";
 
 			if (iceCreamChoice == 1)
 			{
 				cout << "How many tubs of vanilla ice cream would you like?: ";
-				cin >> tubNumber;
+				cin >> tubNumber; //user chooses how many tubs of ice cream they'd like
 
-				totalFrozen += tubNumber * vanillaPrice;
+				totalFrozen += tubNumber * vanillaPrice; //prices are determined and they are added to your total for this function
 			}
 
 			else if (iceCreamChoice == 2)
 			{
 				cout << "How many tubs of chocolate ice cream would you like?: ";
-				cin >> tubNumber;
+				cin >> tubNumber; //user chooses how many tubs of ice cream they'd like
 
-				totalFrozen += tubNumber * chocolatePrice;
+				totalFrozen += tubNumber * chocolatePrice; //prices are determined and they are added to your total for this function
 			}
 
 			else if (iceCreamChoice == 3)
 			{
 				cout << "How many tubs of cookies n' cream ice cream would you like?: ";
-				cin >> tubNumber;
+				cin >> tubNumber; //user chooses how many tubs of ice cream they'd like
 
-				totalFrozen += tubNumber * CNCPrice;
+				totalFrozen += tubNumber * CNCPrice; //prices are determined and they are added to your total for this function
 			}
 		}
 
 		cout << "\n";
 
 		cout << "Would you like to buy anything else from frozen? [1] Yes or [2] No: ";
-		cin >> frozenRepeat;
+		cin >> frozenRepeat; //user chooses if they want more frozen items or not (takes them back to the storefront if they're done)
 
 		cout << "\n";
 	}
@@ -370,6 +388,10 @@ int deli() //where you buy your meat
 
 	do
 	{
+		color(8);
+
+		system("cls");
+
 		cout << "What would you like from the Deli? [1] Ham, [2] Salami, [3] Turkey: ";
 		cin >> meatChoice; //user chooses what kind of meat they want
 
@@ -422,6 +444,10 @@ int storeFront() //first thing that shows when you enter the store
 
 	do
 	{
+		system("cls");
+		
+		color(3);
+
 		cout << "Welcome to generic grocery store\n" << endl;
 		cout << "Where would you like to go?" << endl;
 		cout << "\n[1] Deli, [2] Frozen aisles, [3] Soda aisle, [4] Check Out: ";

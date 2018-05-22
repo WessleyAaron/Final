@@ -30,6 +30,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="profiles.h">
+    <ClInclude Include="color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

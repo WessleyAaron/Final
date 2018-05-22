@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClInclude Include="Bank.h" />
     <ClInclude Include="profiles.h" />
+     <ClInclude Include="color.h" />
     <ClInclude Include="NotWalmart.h" />
     <ClInclude Include="totallylegitperfectlylegaldarkalleynotblackmarketatallmarketplace.h" />
   </ItemGroup>
