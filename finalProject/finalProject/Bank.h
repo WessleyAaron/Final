@@ -232,7 +232,13 @@ int signIn() //where you sign in
 
 	else //when you entered something wrong
 	{
-		cout << "Something was wrong. Would you like to try again? [1] Yes or [2] No: ";
+		color(12);
+
+		cout << "Something was wrong\n" << endl;
+
+		color(14);
+
+		cout << "Would you like to try again? [1] Yes or [2] No: ";
 		cin >> loginRepeat;
 
 		cout << "\n";
