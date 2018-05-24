@@ -6,12 +6,15 @@
 using namespace std;
 
 bool yesno = true;
-int userChoice, userBankChoice;
-string username, password;
+int userChoice, userBankChoice, loginRepeat;
+string username = "abc", password = "def";
+string username1, password1;
 string usernameAttempt, passwordAttempt;
-double userBalanceMoney, moneyDeposit, moneyWithdrawal;
+double userBalanceMoney, tempUserBalanceMoney, moneyDeposit, moneyWithdrawal;
 
 int main();
+
+int mainbank();
 
 int logoff() //when you leave the bank terminal
 {
@@ -26,34 +29,71 @@ int withdrawal() //where you take money out of your account
 {
 	system("cls");
 
-	if (userBalanceMoney == 0.00) //when you don't have any money in your account
+	if (usernameAttempt == username && passwordAttempt == password) //when your username and password both work
 	{
-		color(12); //makes the color red
-
-		cout << "You don't have any money to take out\n" << endl;
-	}
-
-	else if (userBalanceMoney > 0.00) //while you have at least 1 penny in your account
-	{
-		cout << "How much money would you like to withdrawal? $";
-		cin >> moneyWithdrawal; //user enters how much money to take out of the account
-
-		cout << "\n";
-
-		if (moneyWithdrawal > userBalanceMoney) //when you try to take out more money than you have
+		if (userBalanceMoney == 0.00) //when you don't have any money in your account
 		{
 			color(12); //makes the color red
 
-			cout << "You don't have that much money to take out\n" << endl;
+			cout << "You don't have any money to take out\n" << endl;
 		}
 
-		else if (moneyWithdrawal <= userBalanceMoney) //when you try to take out money that is less than or equal too what you have in your account
+		else if (userBalanceMoney > 0.00) //while you have at least 1 penny in your account
 		{
-			userBalanceMoney = userBalanceMoney - moneyWithdrawal; //math that takes money out of the account
+			cout << "How much money would you like to withdrawal? $";
+			cin >> moneyWithdrawal; //user enters how much money to take out of the account
 
-			color(10); //makes the text color green
+			cout << "\n";
 
-			cout << "Thank you for your withdrawal\n" << endl;
+			if (moneyWithdrawal > userBalanceMoney) //when you try to take out more money than you have
+			{
+				color(12); //makes the color red
+
+				cout << "You don't have that much money to take out\n" << endl;
+			}
+
+			else if (moneyWithdrawal <= userBalanceMoney) //when you try to take out money that is less than or equal too what you have in your account
+			{
+				userBalanceMoney = userBalanceMoney - moneyWithdrawal; //math that takes money out of the account
+
+				color(10); //makes the text color green
+
+				cout << "Thank you for your withdrawal\n" << endl;
+			}
+		}
+	}
+
+	else if (usernameAttempt == username1 && passwordAttempt == password1)
+	{
+		if (tempUserBalanceMoney == 0.00) //when you don't have any money in your account
+		{
+			color(12); //makes the color red
+
+			cout << "You don't have any money to take out\n" << endl;
+		}
+
+		else if (tempUserBalanceMoney > 0.00) //while you have at least 1 penny in your account
+		{
+			cout << "How much money would you like to withdrawal? $";
+			cin >> moneyWithdrawal; //user enters how much money to take out of the account
+
+			cout << "\n";
+
+			if (moneyWithdrawal > tempUserBalanceMoney) //when you try to take out more money than you have
+			{
+				color(12); //makes the color red
+
+				cout << "You don't have that much money to take out\n" << endl;
+			}
+
+			else if (moneyWithdrawal <= tempUserBalanceMoney) //when you try to take out money that is less than or equal too what you have in your account
+			{
+				tempUserBalanceMoney = tempUserBalanceMoney - moneyWithdrawal; //math that takes money out of the account
+
+				color(10); //makes the text color green
+
+				cout << "Thank you for your withdrawal\n" << endl;
+			}
 		}
 	}
 
@@ -71,13 +111,53 @@ int deposit() //where you deposit your money
 
 	cout << "\n";
 
-	userBalanceMoney = userBalanceMoney + moneyDeposit; //math that adds deposit to what is already in the account
+	if (usernameAttempt == username && passwordAttempt == password) //when your username and password both work
+	{
+		userBalanceMoney = userBalanceMoney + moneyDeposit; //math that adds deposit to what is already in the account
+	}
+
+	else if (usernameAttempt == username1 && passwordAttempt == password1)
+	{
+		tempUserBalanceMoney = tempUserBalanceMoney + moneyDeposit; //math that adds deposit to what is already in the account
+	}
 
 	color(10); //makes the text color green
 
 	cout << "Thank you for your deposit\n" << endl;
 
 	//goes back to the account function
+
+	return 0;
+}
+
+int tempAccount()
+{
+	cout << fixed << showpoint;
+	cout << setprecision(2); //makes it so each money display shows 2 decimal points
+
+	do{
+		color(14); //makes the text color yellow
+
+		cout << "Your current balance is $" << tempUserBalanceMoney << "\n" << endl; //shows your current balance
+		cout << "What would you like to do? [1] Deposit, [2] Withdrawal, [3] Log Off: "; //user chooses what to do
+		cin >> userBankChoice;
+
+		cout << "\n";
+
+		switch (userBankChoice)
+		{
+		case 1:
+			deposit(); //takes you to the deposit function
+			break;
+		case 2:
+			withdrawal(); //takes you to the withdrawal function
+			break;
+		}
+	}
+
+	while (userBankChoice != 3);
+
+	logoff(); //takes you to the log off function
 
 	return 0;
 }
@@ -131,11 +211,53 @@ int signIn() //where you sign in
 		account(); //takes you to the account function
 	}
 
+	else if (usernameAttempt == username1 && passwordAttempt == password1)
+	{
+
+		if (tempUserBalanceMoney == 0.00)
+		{
+			cout << "Since this is your first time accessing your new account," << endl;
+			cout << "you start with $500 already there\n" << endl;
+
+			tempUserBalanceMoney = tempUserBalanceMoney + 500.00;
+
+			tempAccount();
+		}
+		
+		else
+		{
+			tempAccount();
+		}
+	}
+
 	else //when you entered something wrong
 	{
-		cout << "Something was wrong. Please try again\n" << endl;
+		color(12);
 
-		signIn(); //replays the sign in function
+		cout << "Something was wrong\n" << endl;
+
+		color(14);
+
+		cout << "Would you like to try again? [1] Yes or [2] No: ";
+		cin >> loginRepeat;
+
+		cout << "\n";
+
+		switch (loginRepeat)
+		{
+		case 1:
+			signIn(); //replays the sign in function
+			break;
+		case 2:
+			mainbank();
+			break;
+		default:
+			cout << "Sorry, but that's not an option. Would you like to try logging in again? [1] Yes or [2] No?: ";
+			cin >> loginRepeat;
+			break;
+		}
+
+		
 	}
 
 	return 0;
@@ -146,12 +268,12 @@ int accountCreate() //where you create your account
 	system("cls");
 
 	cout << "Please create a username: ";
-	cin >> username; //saves your username
+	cin >> username1; //saves your username
 
 	cout << "\n";
 
 	cout << "Please create a password: ";
-	cin >> password; //saves your password
+	cin >> password1; //saves your password
 
 	cout << "\n";
 
@@ -173,7 +295,7 @@ int mainbank() //initial starting point
 	color(14); //makes the text color yellow
 
 	cout << "Welcome to the bank terminal\n" << endl;
-	cout << "Do you have an account? [1] Yes or [2] No: ";
+	cout << "Do you have an account? [1] Yes, [2] No, [3] Leave: ";
 	cin >> userChoice;
 
 	cout << "\n";
@@ -212,6 +334,11 @@ int mainbank() //initial starting point
 			mainbank(); //replays the main function
 			break;
 		}
+	}
+
+	else if (userChoice == 3)
+	{
+		main();
 	}
 
 	return 0;

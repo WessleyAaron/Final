@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -11,7 +12,7 @@ double totalFrozen = 0.00;
 
 int CheckOut() //where you buy the items you chose
 {
-	double totalWalMart;
+	double totalWalMart, accountChoice;
 
 	cout << fixed << showpoint;
 	cout << setprecision(2); //makes it so each money display shows 2 decimal points
@@ -22,29 +23,98 @@ int CheckOut() //where you buy the items you chose
 
 	cout << "\n";
 
-	if (totalWalMart > userBalanceMoney) //shows when you dont have enough money in your bank account to buy everything
+	cout << "Which account would you like to use? [1] Account 1 or [2] Account 2?: ";
+	cin >> accountChoice;
+
+	cout << "\n";
+
+	if (accountChoice == 1)
 	{
-		color(12); //makes the text color red
+		cout << "Please enter the password for this account: ";
+		cin >> passwordAttempt;
 
-		cout << "I'm sorry, but you don't have enough money to buy all of this\n" << endl;
+		cout << "\n";
 
-		cout << "You're going to have to put those items back\n" << endl;
+		if (passwordAttempt == password)
+		{
+			if (totalWalMart > userBalanceMoney) //shows when you dont have enough money in your bank account to buy everything
+			{
+				color(12); //makes the text color red
+
+				cout << "I'm sorry, but you don't have enough money to buy all of this\n" << endl;
+
+				cout << "You're going to have to put those items back\n" << endl;
+			}
+
+			else if (totalWalMart <= userBalanceMoney) //takes the money out of your bank account if you have enough
+			{
+				userBalanceMoney = userBalanceMoney - totalWalMart;
+
+				color(10); //makes the text color green
+
+				cout << "Thanks for shopping\n" << endl;
+			}
+
+			totalFrozen = 0.00; //resets the total money spent to $0.00
+			totalSoda = 0.00;
+			totalMeat = 0.00;
+
+			main(); //takes you back to the main function
+		}
+
+		else if (passwordAttempt != password)
+		{
+			color(12);
+
+			cout << "Incorrect password. Please leave\n" << endl;
+
+			main();
+		}
 	}
 
-	else if (totalWalMart <= userBalanceMoney) //takes the money out of your bank account if you have enough
+	else if (accountChoice == 2)
 	{
-		userBalanceMoney = userBalanceMoney - totalWalMart;
+		cout << "Please enter the password for this account: ";
+		cin >> passwordAttempt;
 
-		color(10); //makes the text color green
+		cout << "\n";
 
-		cout << "Thanks for shopping\n" << endl;
+		if (passwordAttempt == password1)
+		{
+			if (totalWalMart > tempUserBalanceMoney) //shows when you dont have enough money in your bank account to buy everything
+			{
+				color(12); //makes the text color red
+
+				cout << "I'm sorry, but you don't have enough money to buy all of this\n" << endl;
+
+				cout << "You're going to have to put those items back\n" << endl;
+			}
+
+			else if (totalWalMart <= tempUserBalanceMoney) //takes the money out of your bank account if you have enough
+			{
+				tempUserBalanceMoney = tempUserBalanceMoney - totalWalMart;
+
+				color(10); //makes the text color green
+
+				cout << "Thanks for shopping\n" << endl;
+			}
+
+			totalFrozen = 0.00; //resets the total money spent to $0.00
+			totalSoda = 0.00;
+			totalMeat = 0.00;
+
+			main(); //takes you back to the main function
+		}
+
+		else if (passwordAttempt != password1)
+		{
+			color(12);
+
+			cout << "Incorrect password. Please leave\n" << endl;
+
+			main();
+		}
 	}
-
-	totalFrozen = 0.00; //resets the total money spent to $0.00
-	totalSoda = 0.00;
-	totalMeat = 0.00;
-
-	main(); //takes you back to the main function
 
 	return 0;
 }
