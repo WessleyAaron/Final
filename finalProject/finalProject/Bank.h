@@ -6,13 +6,15 @@
 using namespace std;
 
 bool yesno = true;
-int userChoice, userBankChoice;
+int userChoice, userBankChoice, loginRepeat;
 string username = "abc", password = "def";
 string username1, password1;
 string usernameAttempt, passwordAttempt;
 double userBalanceMoney, tempUserBalanceMoney, moneyDeposit, moneyWithdrawal;
 
 int main();
+
+int mainbank();
 
 int logoff() //when you leave the bank terminal
 {
@@ -230,9 +232,26 @@ int signIn() //where you sign in
 
 	else //when you entered something wrong
 	{
-		cout << "Something was wrong. Please try again\n" << endl;
+		cout << "Something was wrong. Would you like to try again? [1] Yes or [2] No: ";
+		cin >> loginRepeat;
 
-		signIn(); //replays the sign in function
+		cout << "\n";
+
+		switch (loginRepeat)
+		{
+		case 1:
+			signIn(); //replays the sign in function
+			break;
+		case 2:
+			mainbank();
+			break;
+		default:
+			cout << "Sorry, but that's not an option. Would you like to try logging in again? [1] Yes or [2] No?: ";
+			cin >> loginRepeat;
+			break;
+		}
+
+		
 	}
 
 	return 0;
@@ -270,7 +289,7 @@ int mainbank() //initial starting point
 	color(14); //makes the text color yellow
 
 	cout << "Welcome to the bank terminal\n" << endl;
-	cout << "Do you have an account? [1] Yes or [2] No: ";
+	cout << "Do you have an account? [1] Yes, [2] No, [3] Leave: ";
 	cin >> userChoice;
 
 	cout << "\n";
@@ -309,6 +328,11 @@ int mainbank() //initial starting point
 			mainbank(); //replays the main function
 			break;
 		}
+	}
+
+	else if (userChoice == 3)
+	{
+		main();
 	}
 
 	return 0;
