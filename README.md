@@ -18,3 +18,4 @@ Once you have chosen everything you'd like, you can go to check out, and the pri
 It has 6 of 20 items at any point in time. It randomly selects 6 items out of a list to sell and everytime you go back to 
 the black market, it may have something diffrent every time.
 <img src = "C++Final.jpg">
+https://youtu.be/xo4DOzA37gA
