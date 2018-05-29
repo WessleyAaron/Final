@@ -23,9 +23,9 @@ int blackmarketitems(){
 	for (int i = 0; i < 6; i++){
 	 itemsstock = rand() % 20;
 		cout << blackitems[itemsstock] << " : $ " << blackprices[itemsstock] << " item id " << i << endl;
-		tempstock[itemsstock];
-		tempprice[itemsstock];
-		tempid[itemsstock];
+		tempstock[i] = blackitems[itemsstock];
+		tempprice[i] = blackprices[itemsstock];
+		tempid[i] = blackids[itemsstock];
 	}
 	cout << "Please enter the id of the item you would like to buy " << endl;
 	cin >> itemid;
