@@ -8,39 +8,41 @@ using namespace std;
 
 
 int blackmarketitems(){
+	srand(time(NULL));
 	string yesno;
 	int itemid;
 	int accountChoice;
 	int itemsstock;
 	double blackmarkettotal = 0.00;
-	srand(time(NULL));
-	string tempstock[6] {};
-	double tempprice[6] {};
-	int tempid[6]  {};
-	string blackitems[20] = { "get out of jail free card", "soul of a forgotten god", "the universal truth", "the communist manifesto ", "the universal key","nuclear launch codes", "aegis of the immortal", "harold bat", "a plastic knife", "DDos software", "a cursed brick", "faulty blink dagger","rusted coin", "blackout glasses", "an endless pizza", "assorted drugs", "double edged sword", "a gun", "marble made in china","the endless bag"};
+	string blackitems[20] = { "Get out of jail free card", "Soul of a forgotten god", "The universal truth",
+		"The communist manifesto", "The universal key", "Nuclear launch codes", "Aegis of the immortal",
+		"Harold bat", "A plastic knife", "DDos software", "A cursed brick", "Faulty blink dagger", "Rusted coin",
+		"Blackout glasses", "An endless pizza", "Assorted drugs", "Double-edged sword", "A gun", "Marble made in china", "The endless bag" };
 	double blackprices[20] = { 150.99, .99, 99999.99, 0.02, 555.99, 1.99, 666.66, 30.99, 77.99, 44.55, 20.99, 9000.98, 200.99, 15.99, 11.99, 49.99, 60.99, 777.77, 1.98, 300.99 };
 	int blackids[20] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
 	for (int i = 0; i < 6; i++){
 	 itemsstock = rand() % 20;
-		cout << blackitems[itemsstock] << " : $ " << blackprices[itemsstock] << " item id " << i << endl;
+
+		cout << blackitems[itemsstock] << " : $ " << blackprices[itemsstock] << " item ID " << i << endl;
 		tempstock[i] = blackitems[itemsstock];
 		tempprice[i] = blackprices[itemsstock];
 		tempid[i] = blackids[itemsstock];
+
 	}
-	cout << "Please enter the id of the item you would like to buy " << endl;
+	cout << "Please enter the ID of the item you would like to buy " << endl;
 	cin >> itemid;
 	blackmarkettotal += tempprice[itemid];
-	cout << "you have purchased " << tempstock[itemid] << endl;
+	cout << "You have purchased " << tempstock[itemid] << endl;
 	cout << "That will cost you $" << blackmarkettotal << endl; //shows your total from all the parts of the store
-	cout << "would you like to have a discription of what you purchased yes or no" << endl;
+	cout << "Would you like to have a discription of what you purchased? Yes or No" << endl;
 	cin >> yesno;
 	if (yesno == "yes"){
 		switch (tempid[itemid]){
 		case 0:
 			cout << "The Get out of jail free card:" << endl;
-			cout << "allows you to be exempted of all crimes" << endl;
-			cout << "must be handed to an authority figure or officer of some kind to work" << endl;
-			cout << "only works once" << endl;
+			cout << "Allows you to be exempted of all crimes" << endl;
+			cout << "Must be handed to an authority figure or officer of some kind to work" << endl;
+			cout << "Only works once" << endl;
 			break;
 		case 1:
 			cout << "The Soul of forgotten god:" << endl;
@@ -55,7 +57,7 @@ int blackmarketitems(){
 		case 3:
 			cout << "The Communest Manifesto:" << endl;
 			cout << "Once read from cover to cover, it'll make whatever country" << endl;
-			cout << "you live in a communist nation" << endl;
+			cout << "You live in a communist nation" << endl;
 			break;
 		case 4:
 			cout << "The universal key:" << endl;
@@ -64,7 +66,7 @@ int blackmarketitems(){
 			break;
 		case 5:
 			cout << "Nuclear launch codes:" << endl;
-			cout << "if you don't know what these are, why did you buy them?" << endl;
+			cout << "If you don't know what these are, why did you buy them?" << endl;
 			break;
 		case 6:
 			cout << "Aegis of the immortal:" << endl;
@@ -72,22 +74,81 @@ int blackmarketitems(){
 			break;
 		case 7:
 			cout << "Harold Bat:" << endl;
-			cout << "a bat made for the sole purpose of purifying all corruption" << endl;
+			cout << "A bat made for the sole purpose of purifying all corruption" << endl;
 			cout << "Warning: May induce an obsession with purifying everything/madness" << endl;
-
+			break;
+		case 8:
+			cout << "A plastic knife:" << endl;
+			cout << "A plastic knife so sharp that it is capable of cutting tears in the fabric of our dimension" << endl;
+			cout << "(Not able to cut paper" << endl;
+			break;
+		case 9:
+			cout << "DDos Software:" << endl;
+			cout << "Software that causes a DDos attack to whatever system runs its program" << endl;
+			break;
+		case 10:
+			cout << "A cursed brick:" << endl;
+			cout << "A brick that you can never lose" << endl;
+			cout << "Will always end up back in your hand after 10 seconds" << endl;
+			cout << "Must be sold to officially get rid of" << endl;
+			break;
+		case 11:
+			cout << "Faulty blink dagger:" << endl;
+			cout << "A blink dagger that causes you to teleport backwards when you try jumping farwards" << endl;
+			break;
+		case 12:
+			cout << "Rusted coin:" << endl;
+			cout << "An ancient coin that makes you the most unlucky person on the planet" << endl;
+			cout << "Causes you to win every lottery you enter" << endl;
+			cout << "(May also cause you to lose all that money due to unlucky event)" << endl;
+			break;
+		case 13:
+			cout << "Blackout glasses:" << endl;
+			cout << "Sunglasses that, when worn for the first time, causes permanent blindness" << endl;
+			cout << "Vision only returns when sunglasses are worn" << endl;
+			cout << "(Also causes irreparable douchiness)" << endl;
+			break;
+		case 14:
+			cout << "An endless pizza" << endl;
+			cout << "A box of pizza that always has fresh, out-of-the-oven pizza" << endl;
+			cout << "(Only serves pineapple pizza)" << endl;
+			break;
+		case 15:
+			cout << "Assorted drugs:" << endl;
+			cout << "A bag of random drugs" << endl;
+			break;
+		case 16:
+			cout << "Double-edged sword:" << endl;
+			cout << "A sword that, when used to inflict damage on either people or objects," << endl;
+			cout << "Causes wounds to appear on you instead" << endl;
+			break;
+		case 17:
+			cout << "A gun:" << endl;
+			cout << "When fired, causes your eardrums to rupture" << endl;
+			break;
+		case 18:
+			cout << "Marble made in China:" << endl;
+			cout << "A marble, when dropped, causes earthquakes in China" << endl;
+			cout << "(Doesn't matter where it is dropped, earthquakes only happen in China)" << endl;
+			break;
+		case 19:
+			cout << "The endless bag:" << endl;
+			cout << "A bag that contains a pocket dimension that can hold absolutely anything" << endl;
+			cout << "(The bag is the size of a marble bag and can only contain items that can fit through its opening)" << endl;
+			break;
+		default:
+			cout << "That wasn't a choice. Get out of my shop" << endl;
+			break;
 		}
 
 	}
 	cout << "Which account would you like to use? [1] Account 1 or [2] Account 2?: ";
 	cin >> accountChoice;
 
-	
-
 	if (accountChoice == 1)
 	{
 		cout << "Please enter the password for this account: ";
 		cin >> passwordAttempt;
-
 
 		if (passwordAttempt == password)
 		{
@@ -109,10 +170,6 @@ int blackmarketitems(){
 				cout << "Thanks for shopping\n" << endl;
 			}
 
-			totalFrozen = 0.00; //resets the total money spent to $0.00
-			totalSoda = 0.00;
-			totalMeat = 0.00;
-
 			main(); //takes you back to the main function
 		}
 
@@ -130,8 +187,6 @@ int blackmarketitems(){
 	{
 		cout << "Please enter the password for this account: ";
 		cin >> passwordAttempt;
-
-		
 
 		if (passwordAttempt == password1)
 		{
@@ -153,10 +208,6 @@ int blackmarketitems(){
 				cout << "Thanks for shopping\n" << endl;
 			}
 
-			totalFrozen = 0.00; //resets the total money spent to $0.00
-			totalSoda = 0.00;
-			totalMeat = 0.00;
-
 			main(); //takes you back to the main function
 		}
 
@@ -169,14 +220,14 @@ int blackmarketitems(){
 			main();
 		}
 	}
-	system ("pause");
+
 	return 0;
 }
 int blackmarketMain(){
 	string yesno;
 	cout << "You head to a dark allyway that ends in a small open area that was a dead end." << endl;
 	cout << "An old man behind a stand asks you to come over." << endl;
-	cout << "He asks if you would like to see his wares. Yes or No " << endl;
+	cout << "He asks if you would like to see his wares. Yes or No" << endl;
 	cin >> yesno;
 	if (yesno == "yes"){
 		cout << "Anything for the right price" << endl;

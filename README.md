@@ -14,4 +14,6 @@ This is a Sim City ripoff. The main function asks you where you want to go: the 
 
 Once you have chosen everything you'd like, you can go to check out, and the prices everything you've picked up is calculated and the total is taken out of your bank account.
 
-3) Black Market
+3) The black market is a place to get rare and exotic items you shouldn't have and probably shouldn't exist.
+It has 6 of 20 items at any point in time. It randomly selects 6 items out of a list to sell and everytime you go back to 
+the black market, it may have something diffrent every time.
