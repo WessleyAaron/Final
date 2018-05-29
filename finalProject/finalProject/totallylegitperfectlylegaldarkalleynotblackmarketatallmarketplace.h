@@ -13,6 +13,9 @@ int blackmarketitems(){
 	int itemid;
 	int accountChoice;
 	int itemsstock;
+	string tempstock[6] {};
+	double tempprice[6] {};
+	int tempid[6] {};
 	double blackmarkettotal = 0.00;
 	string blackitems[20] = { "Get out of jail free card", "Soul of a forgotten god", "The universal truth",
 		"The communist manifesto", "The universal key", "Nuclear launch codes", "Aegis of the immortal",
@@ -24,7 +27,7 @@ int blackmarketitems(){
 	 itemsstock = rand() % 20;
 
 		cout << blackitems[itemsstock] << " : $ " << blackprices[itemsstock] << " item ID " << i << endl;
-		tempstock[i] = blackitems[itemsstock];
+		 tempstock[i] = blackitems[itemsstock];
 		tempprice[i] = blackprices[itemsstock];
 		tempid[i] = blackids[itemsstock];
 
@@ -138,6 +141,7 @@ int blackmarketitems(){
 			break;
 		default:
 			cout << "That wasn't a choice. Get out of my shop" << endl;
+			main();
 			break;
 		}
 
